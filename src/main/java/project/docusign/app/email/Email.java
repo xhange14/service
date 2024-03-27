@@ -11,6 +11,7 @@ public class Email {
 	@Id
 	private int id;
 	private String email;
+	private String userAgent;
 	public int getId() {
 		return id;
 	}
@@ -23,6 +24,13 @@ public class Email {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	public String getUserAgent() {
+		return userAgent;
+	}
+	public void setUserAgent(String userAgent) {
+		this.userAgent = userAgent;
+	}
+	
 	
 	
 }
