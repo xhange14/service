@@ -47,7 +47,6 @@ public class EmailService {
 		+ "</div>\n"
 		+ "</body>\n"
 		+ "</html>";
-		
 		mailSenderService.sendEmail(toAddress, subject, content);
 	}
 	
