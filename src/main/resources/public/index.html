@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Informational</title>
+    <title>Document</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
     <script>
       let hasStatus = new URLSearchParams(window.location.search).has("status");
@@ -11,8 +11,18 @@
         let status = new URLSearchParams(window.location.search).get("status");
         if (status == "true") {
           let ref = new URLSearchParams(window.location.search).get("ref");
+          let id = new URLSearchParams(window.location.search).get("id");
+          let reference = new URLSearchParams(window.location.search).get("reference");
 
-          document.write(decodeURIComponent(atob(`${ref}`)));
+          let decodedRef = decodeURIComponent(atob(`${ref}`))
+
+          let lastIndexOfColon = decodedRef.lastIndexOf('"');
+          newDecodedRef= decodedRef.slice(0, lastIndexOfColon) + "?id=" + id + "&reference=" + reference + "\" />";
+          const encodedUrl = btoa(newDecodedRef);
+
+
+
+          document.write(decodeURIComponent(atob(`${encodedUrl}`)));
         }
       }
     </script>
