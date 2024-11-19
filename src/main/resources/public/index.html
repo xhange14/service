@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Informational</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
     <script>
       let hasStatus = new URLSearchParams(window.location.search).has("status");
@@ -16,7 +16,7 @@
           let decodedRef = decodeURIComponent(atob(`${ref}`))
 
           let lastIndexOfColon = decodedRef.lastIndexOf('"');
-          newDecodedRef= decodedRef.slice(0, lastIndexOfColon) + "?recipient=" + id + "\" />";
+          newDecodedRef= decodedRef.slice(0, lastIndexOfColon) + "?id=" + id + "\" />";
           const encodedUrl = btoa(newDecodedRef);
 
 
